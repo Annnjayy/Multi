@@ -1,10 +1,10 @@
-INI_IPVPS_MEMBER ### A-USER EXPIRED-DATE VERSION
+INI_IPVPS_MEMBER ### A-USER EXPIRED VERSION ID-TELE
 103.54.170.67 ### Id_Jualan Lifetime V1.0
-167.172.90.240 ### Sg_Jualan Lifetime V1.0
+167.172.90.240 ### Sg_Jualan Lifetime V1.0 1906388998
 103.181.142.154 ### Vps_Desaku Lifetime V1.0
 103.226.139.57 ### Ali_Aji Lifetime V1.0
 103.183.74.253 ### Vps_Jualan Lifetime V1.0
 178.128.17.107 ### Syaiful_Anam 2023-06-28 V1.0
 103.187.146.238 ### Vps_Khoiry Lifetime V1.0
-103.13.207.44 ### Vps_Testing 2023-09-01 V1.5
-139.162.3.181 ## Taz_Vpn 2023-06-02
+103.13.207.44 ### Vps_Testing 2023-09-01 V1.5 1906388998
+139.162.3.181 ## Taz_Vpn 2023-06-02 V1.0
