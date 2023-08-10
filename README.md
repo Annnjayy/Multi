@@ -11,9 +11,9 @@ Yang Mau Daftar Ip Vps Nya Tinggal Contact Saya Aja D Tele
 ```
 wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main && chmod +x setup-main && ./setup-main
 ```
----------------------------------------------
+|-------------------------------------------|
 |        SERVICE          |      PORT       |
----------------------------------------------
+|-------------------------|-----------------|
 | Open SSH                |  22             |
 | Dropbear                |  143, 109       |
 | Nginx Webserver         |  81             |
@@ -40,7 +40,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/mai
 | Shadowsocks gRPC        |  443            |
 | Proxy Squid             |  3128           |
 | BadVPN UDP              |  7100 - 7300    |
----------------------------------------------
+|-------------------------------------------|
 
 ## _Server Features :
 - Multi Path & Support Dynamic Path
