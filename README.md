@@ -11,7 +11,6 @@ Yang Mau Daftar Ip Vps Nya Tinggal Contact Saya Aja D Tele
 ```
 wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main && chmod +x setup-main && ./setup-main
 ```
-|-------------------------|-----------------|
 |        SERVICE          |      PORT       |
 |-------------------------|-----------------|
 | Open SSH                |  22             |
