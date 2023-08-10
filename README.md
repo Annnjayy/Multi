@@ -9,7 +9,7 @@ Yang Mau Daftar Ip Vps Nya Tinggal Contact Saya Aja D Tele
 
 ### Installer Script
 ```
-wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/Auth/set/setup-main && chmod +x setup-main && ./setup-main
+wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main && chmod +x setup-main && ./setup-main
 ```
 
 |        SERVICE          |      PORT      |
