@@ -11,49 +11,45 @@ Yang Mau Daftar Ip Vps Nya Tinggal Contact Saya Aja D Tele
 ```
 wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main && chmod +x setup-main && ./setup-main
 ```
+---------------------------------------------
+|        SERVICE          |      PORT       |
+---------------------------------------------
+| Open SSH                |  22             |
+| Dropbear                |  143, 109       |
+| Nginx Webserver         |  81             |
+| Haproxy Loadbalancer    |  443, 80        |
+| Udp Custom              |  56-65535       |
+| SSH WS TLS/SNI          |  443            |
+| SSH WS NTLS             |  80, 8080, 8880 |
+| OpenVPN SSL             |  443            |
+| OpenVPN Websocket SSL   |  443            |
+| OpenVPN TCP             |  443, 1194      |
+| OpenVPN UDP             |  2200           |
+| SlowDNS Server          |  443, 53, 2222  |
+| SlowDNS Client          |  443, 88        |
+| XRAY Vmess TLS          |  443            |
+| XRAY Vmess gRPC         |  443            |
+| XRAY Vmess NTLS         |  80             |
+| XRAY Vless TLS          |  443            |
+| XRAY Vless gRPC         |  443            |
+| XRAY Vless NTLS         |  80             |
+| XRAY Trojan TLS         |  443            |
+| XRAY Trojan gRPC        |  443            |
+| XRAY Trojan NTLS        |  80             |
+| Shadowsocks WS          |  443            |
+| Shadowsocks gRPC        |  443            |
+| Proxy Squid             |  3128           |
+| BadVPN UDP              |  7100 - 7300    |
+---------------------------------------------
 
-|        SERVICE          |      PORT      |
-|-------------------------|----------------|
-| Open SSH                |  22            |
-| Udp Custom              |  56-65535      |
-| Dropbear                |  443, 109, 143 |
-| Dropbear Websocket      |  443, 109      |
-| SSH Websocket SSL       |  443           |
-| SSH Websocket           |  80            |
-| OpenVPN SSL             |  443           |
-| OpenVPN Websocket SSL   |  443           |
-| OpenVPN TCP             |  443, 1194     |
-| OpenVPN UDP             |  2200          |
-| Nginx Webserver         |  443, 80, 81   |
-| Haproxy Loadbalancer    |  443, 80       |
-| DNS Server              |  443, 53, 2222 |
-| DNS Client              |  443, 88       |
-| OpenVPN Websocket SSL   |  443           |
-| XRAY Vmess TLS          |  443           |
-| XRAY Vmess gRPC         |  443           |
-| XRAY Vmess None TLS     |  80            |
-| XRAY Vless TLS          |  443           |
-| XRAY Vless gRPC         |  443           |
-| XRAY Vless None TLS     |  80            |
-| Trojan gRPC             |  443           |
-| Trojan WS               |  443           |
-| Shadowsocks WS          |  443           |
-| Shadowsocks gRPC        |  443           |
-| Proxy Squid 1           |  8080          |
-| Proxy Squid 2           |  3128          |
-| Proxy Squid 3           |  8080          |
-| BadVPN UDP              |  7100 - 7300   |
-
-## _Server Features :_ 
+## _Server Features :
 - Multi Path & Support Dynamic Path
 - Timezone Asia/Jakarta (GMT +7)
 - Autoreboot On 05:00 GMT +7 
-- Auto Delete Expired Account 
+- Auto Delete Expired Account On 00:00 GMT +7
 - Fully automatic script 
 - Admin Control  
 - Backup Data & Restore Data
-- Fully automatic script 
-- Full Orders For Various Services  
 - Link Account Crate Protocol
 - Format OpenClash
 
