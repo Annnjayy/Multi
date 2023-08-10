@@ -6,6 +6,7 @@ Yang Mau Daftar Ip Vps Nya Tinggal Contact Saya Aja D Tele
 ## MakhlukVpn Tunnel, Autoscript ini dapat digunakan oleh Debian 10/Ubuntu 20.04 (LTS)_
 
 ### Contact admin [MakhlukVpn](https://t.me/MakhlukVpn)
+### Group Tele [MakhlukVpnTunnel](https://t.me/makhlukvpn_group)
 
 ### Installer Script
 ```
