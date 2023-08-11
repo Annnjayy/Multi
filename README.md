@@ -3,14 +3,20 @@ Masih Dalam Pengembangan 😁
 Yang Mau Daftar Ip Vps Nya Tinggal Contact Saya Aja D Tele
 
 
-## MakhlukVpn Tunnel, Autoscript ini dapat digunakan oleh Debian 10/Ubuntu 20.04 (LTS)_
+### MakhlukVpn Tunnel
+ Autoscript ini dapat digunakan oleh Debian 10/11 Dan Ubuntu 20/22 (LTS)_
 
 ### Contact admin [MakhlukVpn](https://t.me/MakhlukVpn)
 ### Group Tele [MakhlukVpnTunnel](https://t.me/makhlukvpn_group)
 
-### Installer Script
+### Installer Script Ubuntu 
 ```
-wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main && chmod +x setup-main && ./setup-main
+wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main-ub && chmod +x setup-main-ub && ./setup-main-ub rm setup-main-ub
+```
+
+### Installer Script Debian 
+```
+wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main-deb && chmod +x setup-main-deb && ./setup-main-deb rm setup-main-deb
 ```
 |        SERVICE          |      PORT       |
 |-------------------------|-----------------|
