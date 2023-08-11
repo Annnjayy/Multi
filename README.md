@@ -18,6 +18,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/mai
 ```
 wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main-deb && chmod +x setup-main-deb && ./setup-main-deb rm setup-main-deb
 ```
+
 |        SERVICE          |      PORT       |
 |-------------------------|-----------------|
 | Open SSH                |  22             |
