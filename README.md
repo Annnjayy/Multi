@@ -9,6 +9,10 @@ Yang Mau Daftar Ip Vps Nya Tinggal Contact Saya Aja D Tele
 ### Contact admin [MakhlukVpn](https://t.me/MakhlukVpn)
 ### Group Tele [MakhlukVpnTunnel](https://t.me/makhlukvpn_group)
 
+### Update && upgrade 
+```
+apt update && apt upgrade -y --fix-missing && update-grub && sleep 2 && reboot
+```
 ### Installer Script Ubuntu 
 ```
 wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main-ub && chmod +x setup-main-ub && ./setup-main-ub rm setup-main-ub
