@@ -15,12 +15,12 @@ apt update && apt upgrade -y --fix-missing && update-grub && sleep 2 && reboot
 ```
 ### Installer Script Ubuntu 22 (LTS) 
 ```
-wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main-ub && chmod +x setup-main-ub && ./setup-main-ub rm setup-main-ub
+wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main-ub && chmod +x setup-main-ub && ./setup-main-ub && rm setup-main-ub
 ```
 
 ### Installer Script Debian 10/11 && Ubuntu 20 (LTS) 
 ```
-wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main-deb && chmod +x setup-main-deb && ./setup-main-deb rm setup-main-deb
+wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main-deb && chmod +x setup-main-deb && ./setup-main-deb && rm setup-main-deb
 ```
 
 |        SERVICE          |      PORT       |
@@ -56,7 +56,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/mai
 ## _Server Features :
 - Multi Path & Support Dynamic Path
 - Timezone Asia/Jakarta (GMT +7)
-- Autoreboot On 05:00 GMT +7 
+- Autoreboot On 00:00 GMT +7 
 - Auto Delete Expired Account On 00:00 GMT +7
 - Fully automatic script 
 - Admin Control  
