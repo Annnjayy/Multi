@@ -7,7 +7,7 @@ Yang Mau Daftar Ip Vps Nya Tinggal Contact Saya Aja D Tele
  Autoscript ini dapat digunakan oleh Debian 10/11 Dan Ubuntu 20/22 (LTS)_
 
 ### Contact admin [MakhlukVpn](https://t.me/MakhlukVpn)
-### Group Tele [MakhlukVpnTunnel](https://t.me/makhlukvpn_group)
+### Group Tele [MakhlukTunnel](https://t.me/makhlukvpn_group)
 
 ### Update && upgrade 
 ```
@@ -60,9 +60,10 @@ wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/mai
 - Autoreboot On 00:00 GMT +7 
 - Auto Delete Expired Account On 00:00 GMT +7
 - Fully automatic script 
-- Admin Control  
-- Backup Data & Restore Data
-- Link Account Crate Protocol
+- Admin Control
+- Bot Telegram 
+- Backup & Restore Data
+- Limit IP & Quota Account Crate
 - Format OpenClash
 ---
 ![qris](https://github.com/Annnjayy/Multi/raw/main/qris.png)
