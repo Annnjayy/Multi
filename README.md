@@ -32,12 +32,12 @@ wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/mai
 | Udp Custom              |  56-65535       |
 | SSH WS TLS/SNI          |  443            |
 | SSH WS NTLS             |  80, 8080, 8880 |
+| SSL TLS/SNI             |  443            |
 | OpenVPN SSL             |  443            |
-| OpenVPN Websocket SSL   |  443            |
 | OpenVPN TCP             |  443, 1194      |
 | OpenVPN UDP             |  2200           |
-| SlowDNS Server          |  443, 53, 2222  |
-| SlowDNS Client          |  443, 88        |
+| SlowDNS Server          |  443, 53        |
+| Psiphon Server          |  8443           |
 | XRAY Vmess TLS          |  443            |
 | XRAY Vmess gRPC         |  443            |
 | XRAY Vmess NTLS         |  80             |
@@ -47,8 +47,9 @@ wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/mai
 | XRAY Trojan TLS         |  443            |
 | XRAY Trojan gRPC        |  443            |
 | XRAY Trojan NTLS        |  80             |
-| Shadowsocks WS          |  443            |
-| Shadowsocks gRPC        |  443            |
+| XRAY Shadowsocks TLS    |  443            |
+| XRAY Shadowsocks gRPC   |  443            |
+| XRAY Shadowsocks NTLS   |  80             |
 | Proxy Squid             |  3128           |
 | BadVPN UDP              |  7100 - 7300    |
 |-------------------------|-----------------|
