@@ -20,7 +20,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/mai
 
 ### Installer Script Debian 10/11 && Ubuntu 20 (Recomended) 
 ```
-wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main-deb && chmod +x setup-main-deb && ./setup-main-deb
+wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main-ub && chmod +x setup-main-ub && ./setup-main-ub
 ```
 
 |        SERVICE          |      PORT       |
