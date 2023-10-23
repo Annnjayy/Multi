@@ -14,7 +14,7 @@ Yang Mau Daftar Ip Vps Nya Tinggal Contact Saya Aja D Tele
 apt update && apt upgrade -y --fix-missing && update-grub && sleep 2 && reboot
 ```
 
-### Installer Script Debian 10/11 && Ubuntu 20 (Recomended) 
+### Installer Script Debian 10/11 && Ubuntu 20.04 (Recomended) 
 ```
 wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main-ub && chmod +x setup-main-ub && ./setup-main-ub
 ```
