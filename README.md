@@ -1,12 +1,12 @@
-Autoscript VPS V2.0
-Masih Dalam Pengembangan 😁
-Yang Mau Daftar Ip Vps Nya Tinggal Contact Saya Aja D Tele
+Autoscript MakhlukTunnel V2.0
+Masih dalam pengembangan 😁, 
+yang Mau Daftar IP VPS nya tinggal contact Saya aja di Telegram.
 
 
-### MakhlukVpn Tunnel
+### MakhlukTunnel『 𝐌𝐓 』
  Autoscript ini dapat digunakan oleh Debian 10/11 Dan Ubuntu 20/22 (LTS)_
 
-### Contact admin [MakhlukVpn](https://t.me/MakhlukVpn)
+### Contact admin [Mehonk](https://t.me/mehonk_mt)
 ### Group Tele [MakhlukTunnel](https://t.me/makhlukvpn_group)
 
 ### Update && upgrade 
@@ -59,7 +59,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/mai
 - Admin Control
 - Bot Telegram 
 - Backup & Restore Data
-- Limit IP & Quota Account Crate
+- Limit IP & Quota Account
 - Format OpenClash
 ---
 ![qris](https://github.com/Annnjayy/Multi/raw/main/qris.png)
