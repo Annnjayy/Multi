@@ -11,7 +11,7 @@ yang Mau Daftar IP VPS nya tinggal contact Saya aja di Telegram.
 
 ### Update && upgrade (Wajib) 
 ```
-apt update -y && apt upgrade -y && apt install -y wget screen bzip2 upx-ucl xz-utils && sleep 2 && reboot
+apt update -y && apt upgrade -y && apt install -y wget screen bzip2 upx-ucl xz-utils && cp /usr/bin/xz /bin && reboot
 ```
 
 ### Installer Script Debian 10/11 && Ubuntu 20.04 (Recomended) 
