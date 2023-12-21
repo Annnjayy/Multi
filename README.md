@@ -1,23 +1,13 @@
-Autoscript MakhlukTunnel V2.0
-Masih dalam pengembangan 😁, 
-yang Mau Daftar IP VPS nya tinggal contact Saya aja di Telegram.
+Autoscript MakhlukTunnel
+Masih dalam pengembangan 😁.
 
 
 ### MakhlukTunnel『 𝐌𝐓 』
- Autoscript ini dapat digunakan oleh Debian 10/11 Dan Ubuntu 20/22 (LTS)_
+ Autoscript ini dapat digunakan oleh Debian 10/11 Dan Ubuntu 20/22 (LTS)
 
 ### Contact admin [Mehonk](https://t.me/mehonk_mt)
-### Group Tele [MakhlukTunnel](https://t.me/makhlukvpn_group)
-
-### Update && upgrade (Wajib) 
-```
-apt update -y && apt upgrade -y && apt install -y wget screen bzip2 upx-ucl xz-utils && cp /usr/bin/xz /bin && reboot
-```
-
-### Installer Script Debian 10/11 && Ubuntu 20.04 (Recomended) 
-```
-wget --no-check-certificate https://raw.githubusercontent.com/Annnjayy/Multi/main/setup-main-ub && chmod +x setup-main-ub && ./setup-main-ub
-```
+### Channel Telegram [MakhlukTunnel](https://t.me/makhlukvpn_group)
+### Grup Telegram [MakhlukTunnel](https://t.me/MakhlukTunnel_Grup)
 
 |        SERVICE          |      PORT       |
 |-------------------------|-----------------|
