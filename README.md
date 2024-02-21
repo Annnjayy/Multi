@@ -3,7 +3,7 @@ Masih dalam pengembangan 😁.
 
 
 ### MakhlukTunnel『 𝐌𝐓 』
- Autoscript ini dapat digunakan oleh Debian 10/11 Dan Ubuntu 20/22 (LTS)
+ Autoscript ini dapat digunakan oleh Debian 9/10 Dan Ubuntu 18/20 (LTS)
 
 ### Contact admin [Mehonk](https://t.me/mehonk_mt)
 ### Channel Telegram [MakhlukTunnel](https://t.me/makhlukvpn_group)
@@ -17,13 +17,13 @@ Masih dalam pengembangan 😁.
 | Haproxy Loadbalancer    |  443, 80        |
 | Udp Custom              |  56-65535       |
 | SSH WS TLS/SNI          |  443            |
-| SSH WS NTLS             |  80, 8080, 8880 |
+| SSH WS NTLS             |  80, 8080       |
 | SSL TLS/SNI             |  443            |
 | OpenVPN SSL             |  443            |
 | OpenVPN TCP             |  443, 1194      |
 | OpenVPN UDP             |  2200           |
 | SlowDNS Server          |  443, 53        |
-| Psiphon Server          |  8443           |
+| NoobzVPN Server         |  8880, 8443     |
 | XRAY Vmess TLS          |  443            |
 | XRAY Vmess gRPC         |  443            |
 | XRAY Vmess NTLS         |  80             |
