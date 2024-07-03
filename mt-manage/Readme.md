@@ -1,16 +1,15 @@
 ### Penjelasan Argumen dan Contoh Penggunaan
 
-Kode di atas mendefinisikan CLI untuk mengelola berbagai jenis akun (SSH, NoobzVPN, dan berbagai jenis Xray) serta menyediakan fitur untuk memulai server API. Berikut adalah penjelasan mengenai argumen yang tersedia serta contoh penggunaannya.
-
-### Struktur CLI
-
-1. **Cli**: Struktur utama yang mencakup semua subcommand.
-2. **Commands**: Enum yang mendefinisikan perintah-perintah utama yang bisa dijalankan.
-3. **ServiceCommands, NoobzvpnCommands, XrayCommands**: Struktur yang menangani perintah spesifik untuk masing-masing jenis layanan.
-4. **ServiceAction, NoobzvpnAction, XrayAction**: Enum yang mendefinisikan tindakan-tindakan yang dapat dilakukan pada masing-masing jenis layanan.
-5. **ServiceOptions, NoobzvpnOptions, XrayOptions, UserOptions**: Struktur yang mendefinisikan opsi-opsi yang diperlukan untuk tindakan-tindakan tersebut.
+CLI untuk mengelola berbagai jenis akun (SSH, NoobzVPN, dan berbagai jenis Xray) serta menyediakan fitur untuk memulai server API. Berikut adalah penjelasan mengenai argumen yang tersedia serta contoh penggunaannya.
 
 ### Argumen yang Tersedia
+|Tunnel|Path|Command|
+|--|--|--|
+|SSH/OpenVPN|/ssh|✅|
+|VMess|/vmess|✅|
+|VLess|/vless|✅|
+|Trojan|/trojan|✅|
+|Shadowsocks|/shadowsocks|✅|
 
 #### Commands
 - **Ssh**: Mengelola akun SSH.
@@ -46,21 +45,21 @@ Kode di atas mendefinisikan CLI untuk mengelola berbagai jenis akun (SSH, NoobzV
 - **user**: Nama pengguna untuk akun.
 - **pass**: Kata sandi untuk akun (default: "random").
 - **exp**: Tanggal kadaluarsa (default: "360").
-- **device**: Identifier perangkat (default: "999").
+- **device**: Batas perangkat (default: "999").
 
 #### NoobzvpnOptions
 - **user**: Nama pengguna untuk akun.
 - **pass**: Kata sandi untuk akun (default: "random").
 - **exp**: Tanggal kadaluarsa (default: "360").
-- **device**: Identifier perangkat (default: "999").
+- **device**: Batas perangkat (default: "999").
 - **bandwidth**: Batas bandwidth (default: "9999").
 
 #### XrayOptions
-- **types**: Jenis akun link (default: "all").
+- **types**: Jenis akun link [ all /ws / grpc ] (default: "all").
 - **user**: Nama pengguna untuk akun.
 - **uuid**: UUID untuk akun (default: "random").
 - **exp**: Tanggal kadaluarsa (default: "360").
-- **device**: Identifier perangkat (default: "999").
+- **device**: Batas perangkat (default: "999").
 - **bandwidth**: Batas bandwidth (default: "9999").
 
 #### UserOptions
@@ -71,37 +70,37 @@ Kode di atas mendefinisikan CLI untuk mengelola berbagai jenis akun (SSH, NoobzV
 #### Menjalankan Server
 Untuk memulai server API di port 2052 (atau port lain yang diinginkan):
 ```bash
-cargo run -- serve --port 2052
+./mt-manage-cli serve --port 2052
 ```
 
 #### Menambahkan Akun SSH
 Untuk menambahkan akun SSH:
 ```bash
-cargo run -- ssh add --user myuser --pass mypassword --exp 360 --device 999
+./mt-manage-cli ssh add --user myuser --pass mypassword --exp 360 --device 999
 ```
 
 #### Mengedit Akun SSH
 Untuk mengedit akun SSH:
 ```bash
-cargo run -- ssh edit --user myuser --pass newpassword --exp 360 --device 999
+./mt-manage-cli ssh edit --user myuser --pass newpassword --exp 360 --device 999
 ```
 
 #### Menghapus Akun SSH
 Untuk menghapus akun SSH:
 ```bash
-cargo run -- ssh remove --user myuser
+./mt-manage-cli ssh remove --user myuser
 ```
 
 #### Mengunci Akun SSH
 Untuk mengunci akun SSH:
 ```bash
-cargo run -- ssh lock --user myuser
+./mt-manage-cli ssh lock --user myuser
 ```
 
 #### Membuka Kunci Akun SSH
 Untuk membuka kunci akun SSH:
 ```bash
-cargo run -- ssh unlock --user myuser
+./mt-manage-cli ssh unlock --user myuser
 ```
 
 ### Kesimpulan
