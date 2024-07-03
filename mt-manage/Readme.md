@@ -3,13 +3,6 @@
 CLI untuk mengelola berbagai jenis akun (SSH, NoobzVPN, dan berbagai jenis Xray) serta menyediakan fitur untuk memulai server API. Berikut adalah penjelasan mengenai argumen yang tersedia serta contoh penggunaannya.
 
 ### Argumen yang Tersedia
-|Tunnel|Path|Command|
-|--|--|--|
-|SSH/OpenVPN|/ssh|✅|
-|VMess|/vmess|✅|
-|VLess|/vless|✅|
-|Trojan|/trojan|✅|
-|Shadowsocks|/shadowsocks|✅|
 
 #### Commands
 - **Ssh**: Mengelola akun SSH.
