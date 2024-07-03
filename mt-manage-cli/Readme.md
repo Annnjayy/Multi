@@ -3,7 +3,7 @@ Berikut ini adalah contoh penggunaan dan bagaimana cara memanggil endpoint untuk
 ### 1. Menjalankan Server
 Pertama, Anda perlu menjalankan server Anda. Pastikan Anda sudah mengompilasi dan menjalankan program Anda dengan perintah:
 ```bash
-cargo run -- serve --port 2052
+./mt-manage-cli serve -p 2052
 ```
 
 ### 2. Mengirimkan Permintaan Tambah Akun
