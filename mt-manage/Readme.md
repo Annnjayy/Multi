@@ -1,101 +1,156 @@
-### Penjelasan Argumen dan Contoh Penggunaan
+## Dokumentasi: mt-manage-cli
 
-CLI untuk mengelola berbagai jenis akun (SSH, NoobzVPN, dan berbagai jenis Xray) serta menyediakan fitur untuk memulai server API. Berikut adalah penjelasan mengenai argumen yang tersedia serta contoh penggunaannya.
+### Deskripsi
+`mt-manage-cli` adalah antarmuka baris perintah (CLI) yang digunakan untuk mengelola berbagai layanan seperti akun SSH, Noobzvpn, dan Xray. Selain itu, CLI ini juga menyediakan server web API untuk mengelola akun melalui permintaan HTTP.
 
-### Argumen yang Tersedia
+### Instalasi
+Pastikan Anda memiliki Rust dan Cargo yang terinstal di sistem Anda. Clone repository dan build proyeknya:
 
-#### Commands
-- **Ssh**: Mengelola akun SSH.
-- **Noobzvpn**: Mengelola akun NoobzVPN.
-- **Vmess**: Mengelola akun VMess.
-- **Vless**: Mengelola akun VLess.
-- **Trojan**: Mengelola akun Trojan.
-- **Shadowsocks**: Mengelola akun Shadowsocks.
-- **Serve**: Memulai server API dengan opsi `--port` untuk menentukan port.
-
-#### ServiceCommands
-- **Add**: Menambahkan akun baru.
-- **Edit**: Mengedit akun yang ada.
-- **Remove**: Menghapus akun yang ada.
-- **Lock**: Mengunci akun.
-- **Unlock**: Membuka kunci akun.
-
-#### NoobzvpnCommands
-- **Add**: Menambahkan akun baru.
-- **Edit**: Mengedit akun yang ada.
-- **Remove**: Menghapus akun yang ada.
-- **Lock**: Mengunci akun.
-- **Unlock**: Membuka kunci akun.
-
-#### XrayCommands
-- **Add**: Menambahkan akun baru.
-- **Edit**: Mengedit akun yang ada.
-- **Remove**: Menghapus akun yang ada.
-- **Lock**: Mengunci akun.
-- **Unlock**: Membuka kunci akun.
-
-#### ServiceOptions
-- **user**: Nama pengguna untuk akun.
-- **pass**: Kata sandi untuk akun (default: "random").
-- **exp**: Tanggal kadaluarsa (default: "360").
-- **device**: Batas perangkat (default: "999").
-
-#### NoobzvpnOptions
-- **user**: Nama pengguna untuk akun.
-- **pass**: Kata sandi untuk akun (default: "random").
-- **exp**: Tanggal kadaluarsa (default: "360").
-- **device**: Batas perangkat (default: "999").
-- **bandwidth**: Batas bandwidth (default: "9999").
-
-#### XrayOptions
-- **types**: Jenis akun link [ all /ws / grpc ] (default: "all").
-- **user**: Nama pengguna untuk akun.
-- **uuid**: UUID untuk akun (default: "random").
-- **exp**: Tanggal kadaluarsa (default: "360").
-- **device**: Batas perangkat (default: "999").
-- **bandwidth**: Batas bandwidth (default: "9999").
-
-#### UserOptions
-- **user**: Nama pengguna untuk akun.
-
-### Contoh Penggunaan
-
-#### Menjalankan Server
-Untuk memulai server API di port 2052 (atau port lain yang diinginkan):
 ```bash
-./mt-manage-cli serve --port 2052
+git clone <repository_url>
+cd <repository_directory>
+cargo build --release
 ```
 
-#### Menambahkan Akun SSH
-Untuk menambahkan akun SSH:
+### Penggunaan CLI
+
+#### Menampilkan Bantuan
+Menampilkan bantuan umum untuk CLI:
 ```bash
-./mt-manage-cli ssh add --user myuser --pass mypassword --exp 360 --device 999
+./mt-manage-cli --help
+```
+Menampilkan bantuan untuk subperintah:
+```bash
+./mt-manage-cli <command> --help
 ```
 
-#### Mengedit Akun SSH
-Untuk mengedit akun SSH:
-```bash
-./mt-manage-cli ssh edit --user myuser --pass newpassword --exp 360 --device 999
+#### Perintah
+1. **SSH**
+   - Menambah akun SSH:
+     ```bash
+     ./mt-manage-cli ssh add --user <username> --pass <password> --exp <expiration_date> --device <device_id>
+     ```
+   - Mengedit akun SSH:
+     ```bash
+     ./mt-manage-cli ssh edit --user <username> --pass <password> --exp <expiration_date> --device <device_id>
+     ```
+   - Menghapus akun SSH:
+     ```bash
+     ./mt-manage-cli ssh remove --user <username>
+     ```
+   - Mengunci akun SSH:
+     ```bash
+     ./mt-manage-cli ssh lock --user <username>
+     ```
+   - Membuka kunci akun SSH:
+     ```bash
+     ./mt-manage-cli ssh unlock --user <username>
+     ```
+
+2. **Noobzvpn**
+   - Menambah akun Noobzvpn:
+     ```bash
+     ./mt-manage-cli noobzvpn add --user <username> --pass <password> --exp <expiration_date> --device <device_id> --bandwidth <bandwidth_limit>
+     ```
+   - Mengedit akun Noobzvpn:
+     ```bash
+     ./mt-manage-cli noobzvpn edit --user <username> --pass <password> --exp <expiration_date> --device <device_id> --bandwidth <bandwidth_limit>
+     ```
+   - Menghapus akun Noobzvpn:
+     ```bash
+     ./mt-manage-cli noobzvpn remove --user <username>
+     ```
+   - Mengunci akun Noobzvpn:
+     ```bash
+     ./mt-manage-cli noobzvpn lock --user <username>
+     ```
+   - Membuka kunci akun Noobzvpn:
+     ```bash
+     ./mt-manage-cli noobzvpn unlock --user <username>
+     ```
+
+3. **Xray (Vmess, Vless, Trojan, Shadowsocks)**
+   - Menambah akun Xray:
+     ```bash
+     ./mt-manage-cli vmess add --user <username> --uuid <uuid> --exp <expiration_date> --device <device_id> --bandwidth <bandwidth_limit>
+     ```
+   - Mengedit akun Xray:
+     ```bash
+     ./mt-manage-cli vmess edit --user <username> --uuid <uuid> --exp <expiration_date> --device <device_id> --bandwidth <bandwidth_limit>
+     ```
+   - Menghapus akun Xray:
+     ```bash
+     ./mt-manage-cli vmess remove --user <username>
+     ```
+   - Mengunci akun Xray:
+     ```bash
+     ./mt-manage-cli vmess lock --user <username>
+     ```
+   - Membuka kunci akun Xray:
+     ```bash
+     ./mt-manage-cli vmess unlock --user <username>
+     ```
+
+4. **Menjalankan Server API**
+   Untuk memulai server API pada port tertentu:
+   ```bash
+   ./mt-manage-cli serve --port <port_number>
+   ```
+
+### Penggunaan API
+
+#### Menambah Akun
+Endpoint: `POST /{service}/add`
+Body (JSON):
+```json
+{
+  "user": "username",
+  "pass": "password",
+  "exp": "expiration_date",
+  "device": "device_id",
+  "bandwidth": "bandwidth_limit"
+}
 ```
 
-#### Menghapus Akun SSH
-Untuk menghapus akun SSH:
-```bash
-./mt-manage-cli ssh remove --user myuser
+#### Mengedit Akun
+Endpoint: `POST /{service}/edit`
+Body (JSON):
+```json
+{
+  "user": "username",
+  "pass": "password",
+  "exp": "expiration_date",
+  "device": "device_id",
+  "bandwidth": "bandwidth_limit"
+}
 ```
 
-#### Mengunci Akun SSH
-Untuk mengunci akun SSH:
-```bash
-./mt-manage-cli ssh lock --user myuser
+#### Menghapus Akun
+Endpoint: `POST /{service}/remove`
+Body (JSON):
+```json
+{
+  "user": "username"
+}
 ```
 
-#### Membuka Kunci Akun SSH
-Untuk membuka kunci akun SSH:
-```bash
-./mt-manage-cli ssh unlock --user myuser
+#### Mengunci Akun
+Endpoint: `POST /{service}/lock`
+Body (JSON):
+```json
+{
+  "user": "username"
+}
+```
+
+#### Membuka Kunci Akun
+Endpoint: `POST /{service}/unlock`
+Body (JSON):
+```json
+{
+  "user": "username"
+}
 ```
 
 ### Kesimpulan
-
-Struktur CLI ini menyediakan cara yang komprehensif untuk mengelola berbagai jenis akun layanan melalui perintah baris. Pengguna dapat menambahkan, mengedit, menghapus, mengunci, dan membuka kunci akun dengan mudah menggunakan perintah yang sesuai. Selain itu, terdapat opsi untuk memulai server API untuk integrasi lebih lanjut dengan sistem lain.
+`mt-manage-cli` adalah alat serbaguna untuk mengelola berbagai jenis layanan VPN dan SSH baik melalui baris perintah maupun API web. Dengan dokumentasi ini, pengguna dapat menambah, mengedit, menghapus, mengunci, dan membuka kunci akun dengan mudah. Server API juga memungkinkan integrasi dengan aplikasi lain untuk mengelola akun secara otomatis.
