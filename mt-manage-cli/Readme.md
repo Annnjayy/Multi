@@ -1,4 +1,12 @@
-Berikut ini adalah contoh penggunaan dan bagaimana cara memanggil endpoint untuk menambahkan akun melalui API yang Anda buat:
+Berikut ini adalah contoh penggunaan dan bagaimana cara memanggil endpoint untuk menambahkan akun melalui API mt-manage-cli:
+
+|Tunnel|Path|Command|
+|--|--|--|
+|SSH/OpenVPN|/ssh|✅|
+|VMess|/vmess|✅|
+|VLess|/vless|✅|
+|Trojan|/trojan|✅|
+|Shadowsocks|/shadowsocks|✅|
 
 ### 1. Menjalankan Server
 Pertama, Anda perlu menjalankan server Anda. Pastikan Anda sudah mengompilasi dan menjalankan program Anda dengan perintah:
