@@ -47,7 +47,16 @@ Menampilkan bantuan untuk Aksi service:
 ```
 
 ```USAGE
-Usage: ./mt-manage-cli [command] [action] [options]
+Usage: ./mt-manage-cli [command] [action] [opts]
+
+[command]:
+ssh [action] [..] : Manage SSH account.
+noobzvpn [action] [..] : Manage Noobzvpns account.
+vmess [action] [..] : Manage VMess account.
+vless [action] [..] : Manage VLess account.
+trojan [action] [..] : Manage Trojan account.
+shadowsocks [action] [..] : Manage Shadowsocks account.
+serve [opts] [..] : Start the API Web server.
 
 [action]:
 add [opts] [..] : add new account.
