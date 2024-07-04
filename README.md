@@ -6,7 +6,7 @@ Masih dalam pengembangan.
  Autoscript ini dapat digunakan oleh Debian 9/10 Dan Ubuntu 18/20 (LTS)
 
 ### Contact admin [Mehonk](https://t.me/mehonk_cs)
-### Grup Telegram [MakhlukTunnel](https://t.me/makhluktunnel))
+### Grup Telegram [MakhlukTunnel](https://t.me/makhluktunnel)
 
 |        SERVICE          |      PORT       |
 |-------------------------|-----------------|
