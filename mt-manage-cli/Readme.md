@@ -32,8 +32,7 @@ Menampilkan bantuan untuk subperintah:
 ./mt-manage-cli <command> --help
 ```
 
-#### Perintah
-```
+```help
 [Command]:
 add [opts] [..] : add new account.
 edit [opts] [..] : edit existing account.
@@ -51,6 +50,7 @@ unlock [opts] [..] : unlocking existing account.
 -b, <GIGA_BYTES> : give the allowed max bandwidth. default: 9999 = unlimited.
 ```
 
+#### Perintah
 1. **SSH**
    - Menambah akun SSH:
      ```bash
