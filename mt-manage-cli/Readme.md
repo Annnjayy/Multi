@@ -21,7 +21,7 @@
 | lock | --user |
 | unlock | --user |
 
-| Options | Informasi | For_Service |
+| Options | Informasi | For_Command |
 |--|--|--|
 | --port | Port for the API Web server | for serve |
 | --types | Types for the account link ( all / ws / grpc ) | for xray ( vmess, vless, trojan, shadowsocks ) |
@@ -58,7 +58,7 @@ unlock [opts] [..] : unlocking existing account.
 
 [opts]:
 --port <PORT_API> : give port for the API Web server, default: 2052 .
---types <TYPE_XRAY> : give the account xray link type.
+--types <TYPE_XRAY> : give the account xray link type, default: all .
 --user <USERNAME> : give the account username.
 --pass <PASSWORD> : give the account password.
 --uuid <UUID V4> : give the account uuid, default: random .
