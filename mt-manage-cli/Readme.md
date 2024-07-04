@@ -3,7 +3,7 @@
 
 ### Penggunaan CLI
 
-| service |
+| Command |
 |--|
 | ssh |
 | noobzvpn |
@@ -13,7 +13,7 @@
 | shadowsocks |
 | serve |
 
-| Command | Req_Options |
+| Action | Req_Options |
 |--|--|
 | add | all opts |
 | edit | all opts |
@@ -37,13 +37,19 @@ Menampilkan bantuan umum untuk CLI:
 ```bash
 ./mt-manage-cli --help
 ```
-Menampilkan bantuan untuk subperintah:
+Menampilkan bantuan untuk service:
 ```bash
 ./mt-manage-cli <command> --help
 ```
+Menampilkan bantuan untuk Aksi service:
+```bash
+./mt-manage-cli <command> <action> --help
+```
 
-```help
-[Command]:
+```USAGE
+Usage: ./mt-manage-cli [command] [action] [options]
+
+[action]:
 add [opts] [..] : add new account.
 edit [opts] [..] : edit existing account.
 remove [opts] [..] : remove existing account.
