@@ -3,24 +3,34 @@
 
 ### Penggunaan CLI
 
-| service | Command | Options |
+| service | Command | Req_Options |
 |--|--|--|
-| ssh | add,  edit, remove, lock, unlock |✅|
-| noobzvpn | add,  edit, remove, lock, unlock |✅|
-| vmmess | add,  edit, remove, lock, unlock |✅|
-| vless | add,  edit, remove, lock, unlock |✅|
-| trojan | add,  edit, remove, lock, unlock  |✅|
+| ssh | add, edit, remove, lock, unlock |✅|
+| noobzvpn | add, edit, remove, lock, unlock |✅|
+| vmmess | add, edit, remove, lock, unlock |✅|
+| vless | add, edit, remove, lock, unlock |✅|
+| trojan | add, edit, remove, lock, unlock  |✅|
 | shadowsocks | add,  edit, remove, lock, unlock |✅|
 
-| Options | Informasi | Default_Value |
+| Command | Req_Options |
+|--|--|
+| add | all opts |
+| edit | all opts |
+| remove | --user |
+| lock | --user |
+| unlock | --user |
+| serve | --port |
+
+| Options | Informasi | For_Service |
 |--|--|--|
+| --port | Port for the API Web server | for serve |
 | --types | Types for the account link ( all / ws / grpc ) | all |
-| --user | Username for the all service | Not found |
-| --pass | Password for the account | random |
-| --uuid | UUID [v4] for the account | random |
-| -e | Expiration date | 360 |
-| -d | Device Limit | 999 |
-| -b | Bandwidth Limit | 9999 |
+| --user | Username for the all service | for xray ( vmess, vless, trojan, shadowsocks ) |
+| --pass | Password for the account | for ssh & noobzvpn |
+| --uuid | UUID [v4] for the account | for xray ( vmess, vless, trojan, shadowsocks ) |
+| -e | Expiration date | for all service |
+| -d | Device Limit | for all service |
+| -b | Bandwidth Limit | for noobzvpn & xray ( vmess, vless, trojan, shadowsocks ) |
 
 #### Menampilkan Bantuan
 Menampilkan bantuan umum untuk CLI:
@@ -39,15 +49,16 @@ edit [opts] [..] : edit existing account.
 remove [opts] [..] : remove existing account.
 lock [opts] [..] : locking existing account.
 unlock [opts] [..] : unlocking existing account.
+serve [opts]
 
-[opts]: (--add & --edit)
+[opts]:
 --types <TYPE_XRAY> : give the account xray link type.
 --user <USERNAME> : give the account username.
 --pass <PASSWORD> : give the account password.
---uuid <UUID V4> : give the account uuuid.
--e, <DAYS> : give the account expiration. default: 360 .
--d, <UNITS> : give the allowed max login device. default: 999 = unlimited.
--b, <GIGA_BYTES> : give the allowed max bandwidth. default: 9999 = unlimited.
+--uuid <UUID V4> : give the account uuid, default: random .
+-e, <DAYS> : give the account expiration, default: 360 .
+-d, <UNITS> : give the allowed max login device, default: 999 = unlimited.
+-b, <GIGA_BYTES> : give the allowed max bandwidth, default: 9999 = unlimited.
 ```
 
 #### Perintah
