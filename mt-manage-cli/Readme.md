@@ -24,7 +24,7 @@
 | Options | Informasi | For_Service |
 |--|--|--|
 | --port | Port for the API Web server | for serve |
-| --types | Types for the account link ( all / ws / grpc ) | all |
+| --types | Types for the account link ( all / ws / grpc ) | for xray ( vmess, vless, trojan, shadowsocks ) |
 | --user | Username for the all service | for xray ( vmess, vless, trojan, shadowsocks ) |
 | --pass | Password for the account | for ssh & noobzvpn |
 | --uuid | UUID [v4] for the account | for xray ( vmess, vless, trojan, shadowsocks ) |
