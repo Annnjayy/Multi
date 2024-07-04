@@ -21,6 +21,7 @@
 
 ### Penggunaan CLI
 
+```
 [Command]:
 add [opts] [..] : add new account.
 edit [opts] [..] : edit existing account.
@@ -33,10 +34,7 @@ unlock [opts] [..] : unblocking existing account.
 -e,-expired DAYS : give the account expiration. default: 0 = unlimited.
 -d,-device UNITS : give the allowed max login device. default: 0 = unlimited.
 -b,-bandwidth GIGA_BYTES : give the allowed max bandwidth. default: 0 = unlimited.
-
-[opts]: (--opts).
--reset-all : reset all issued date (renew-expired) & statistic for all accounts.
--remove-all : WARNING! remove all accounts in database
+```
 
 
 #### Menampilkan Bantuan
