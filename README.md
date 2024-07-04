@@ -1,13 +1,12 @@
 Autoscript MakhlukTunnel
-Masih dalam pengembangan 😁.
+Masih dalam pengembangan.
 
 
 ### MakhlukTunnel『 𝐌𝐓 』
  Autoscript ini dapat digunakan oleh Debian 9/10 Dan Ubuntu 18/20 (LTS)
 
-### Contact admin [Mehonk](https://t.me/mehonk_mt)
-### Channel Telegram [MakhlukTunnel](https://t.me/makhlukvpn_group)
-### Grup Telegram [MakhlukTunnel](https://t.me/MakhlukTunnel_Grup)
+### Contact admin [Mehonk](https://t.me/mehonk_cs)
+### Grup Telegram [MakhlukTunnel](https://t.me/makhluktunnel))
 
 |        SERVICE          |      PORT       |
 |-------------------------|-----------------|
