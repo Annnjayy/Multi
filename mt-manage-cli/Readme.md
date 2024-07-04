@@ -1,8 +1,24 @@
+## Dokumentasi: mt-manage-cli
+
+### Deskripsi
+`mt-manage-cli` adalah antarmuka baris perintah (CLI) yang digunakan untuk mengelola berbagai layanan seperti akun SSH, Noobzvpn, dan Xray. Selain itu, CLI ini juga menyediakan server web API untuk mengelola akun melalui permintaan HTTP.
+
+|Service|Command 1|Command 2|Options|
+|--|--|--|--|
+|SSH/OpenVPN|ssh|✅||
+|Noobzvps|noobzvpn|✅||
+|VMess|vmess|✅||
+|VLess|vless|✅||
+|Trojan|trojan|✅||
+|Shadowsocks|shadowsocks|✅||
+
+### Penggunaan API
 Berikut ini adalah contoh penggunaan dan bagaimana cara memanggil endpoint untuk menambahkan akun melalui API mt-manage-cli:
 
-|Tunnel|Path|Command|
+|Service|Path|Command|
 |--|--|--|
 |SSH/OpenVPN|/ssh|✅|
+|Noobzvps|/noobzvpn|✅||
 |VMess|/vmess|✅|
 |VLess|/vless|✅|
 |Trojan|/trojan|✅|
