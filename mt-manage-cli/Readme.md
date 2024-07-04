@@ -3,14 +3,15 @@
 
 ### Penggunaan CLI
 
-| service | Command | Req_Options |
-|--|--|--|
-| ssh | add, edit, remove, lock, unlock |✅|
-| noobzvpn | add, edit, remove, lock, unlock |✅|
-| vmmess | add, edit, remove, lock, unlock |✅|
-| vless | add, edit, remove, lock, unlock |✅|
-| trojan | add, edit, remove, lock, unlock  |✅|
-| shadowsocks | add,  edit, remove, lock, unlock |✅|
+| service |
+|--|
+| ssh |
+| noobzvpn |
+| vmmess |
+| vless |
+| trojan |
+| shadowsocks |
+| serve |
 
 | Command | Req_Options |
 |--|--|
@@ -19,7 +20,6 @@
 | remove | --user |
 | lock | --user |
 | unlock | --user |
-| serve | --port |
 
 | Options | Informasi | For_Service |
 |--|--|--|
@@ -49,9 +49,9 @@ edit [opts] [..] : edit existing account.
 remove [opts] [..] : remove existing account.
 lock [opts] [..] : locking existing account.
 unlock [opts] [..] : unlocking existing account.
-serve [opts]
 
 [opts]:
+--port <PORT_API> : give port for the API Web server, default: 2052 .
 --types <TYPE_XRAY> : give the account xray link type.
 --user <USERNAME> : give the account username.
 --pass <PASSWORD> : give the account password.
