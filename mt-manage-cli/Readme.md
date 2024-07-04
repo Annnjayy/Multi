@@ -1,6 +1,8 @@
 ### Deskripsi
 `mt-manage-cli` adalah antarmuka baris perintah (CLI) yang digunakan untuk mengelola berbagai layanan seperti akun SSH, Noobzvpn, dan Xray. Selain itu, CLI ini juga menyediakan server web API untuk mengelola akun melalui permintaan HTTP.
 
+### Penggunaan CLI
+
 | service | Command | Options |
 |--|--|--|
 | ssh | add,  edit, remove, lock, unlock |✅|
@@ -12,30 +14,13 @@
 
 | Options | Informasi | Default_Value |
 |--|--|--|
+| --types | Types for the account link ( all / ws / grpc ) | all |
 | --user | Username for the all service | Not found |
 | --pass | Password for the account | random |
 | --uuid | UUID [v4] for the account | random |
 | -e | Expiration date | 360 |
 | -d | Device Limit | 999 |
 | -b | Bandwidth Limit | 9999 |
-
-### Penggunaan CLI
-
-```
-[Command]:
-add [opts] [..] : add new account.
-edit [opts] [..] : edit existing account.
-remove [opts] [..] : remove existing account.
-lock [opts] [..] : blocking existing account.
-unlock [opts] [..] : unblocking existing account.
-
-[opts]: (--add & --edit)
--p,-password PASSWORD : give the account password. (required in --add).
--e,-expired DAYS : give the account expiration. default: 0 = unlimited.
--d,-device UNITS : give the allowed max login device. default: 0 = unlimited.
--b,-bandwidth GIGA_BYTES : give the allowed max bandwidth. default: 0 = unlimited.
-```
-
 
 #### Menampilkan Bantuan
 Menampilkan bantuan umum untuk CLI:
@@ -48,6 +33,24 @@ Menampilkan bantuan untuk subperintah:
 ```
 
 #### Perintah
+```
+[Command]:
+add [opts] [..] : add new account.
+edit [opts] [..] : edit existing account.
+remove [opts] [..] : remove existing account.
+lock [opts] [..] : locking existing account.
+unlock [opts] [..] : unlocking existing account.
+
+[opts]: (--add & --edit)
+--types <TYPE_XRAY> : give the account xray link type.
+--user <USERNAME> : give the account username.
+--pass <PASSWORD> : give the account password.
+--uuid <UUID V4> : give the account uuuid.
+-e, <DAYS> : give the account expiration. default: 360 .
+-d, <UNITS> : give the allowed max login device. default: 999 = unlimited.
+-b, <GIGA_BYTES> : give the allowed max bandwidth. default: 9999 = unlimited.
+```
+
 1. **SSH**
    - Menambah akun SSH:
      ```bash
