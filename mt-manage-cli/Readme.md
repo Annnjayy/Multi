@@ -38,9 +38,6 @@ unlock [opts] [..] : unblocking existing account.
 -reset-all : reset all issued date (renew-expired) & statistic for all accounts.
 -remove-all : WARNING! remove all accounts in database
 
-[..]: continuous [action]
-./mt-manage-cli [action] [action] ...
-```
 
 #### Menampilkan Bantuan
 Menampilkan bantuan umum untuk CLI:
