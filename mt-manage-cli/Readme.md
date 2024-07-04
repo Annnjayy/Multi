@@ -14,74 +14,76 @@ Pertama, Anda perlu menjalankan server Anda. Pastikan Anda sudah mengompilasi da
 ./mt-manage-cli serve --port 2052
 ```
 
-### 2. Mengirimkan Permintaan Tambah Akun
+### 2. Mengirimkan Permintaan & Respon JSON
 Gunakan alat seperti `curl`, Postman, atau alat lain untuk mengirimkan permintaan POST ke endpoint yang telah Anda tentukan. Berikut ini adalah contoh menggunakan `curl`:
 
 #### SSH Account
 Untuk menambahkan akun SSH:
 ```bash
-curl -X POST http://localhost:2052/ssh/add -H "Content-Type: application/json" -d '{
-    "user": "username",
-    "pass": "password",
-    "exp": "360",
-    "device": "999"
-}'
+curl -X POST http://localhost:2052/ssh/add -H "Content-Type: application/json" -d '{ "user": "username", "pass": "password", "exp": "360", "device": "999" }'
+```
+
+Jika permintaan berhasil, Anda akan menerima respon dalam format JSON seperti ini:
+```json
+{
+        "service": "ssh"
+        "user": <user>
+        "pass": <pass>
+        "exp_date": <date>
+        "iplim": <iplim>
+        "status": "unlock"
+}
 ```
 
 #### Noobzvpn Account
 Untuk menambahkan akun Noobzvpn:
 ```bash
-curl -X POST http://localhost:2052/noobzvpn/add -H "Content-Type: application/json" -d '{
-    "user": "username",
-    "pass": "password",
-    "exp": "360",
-    "device": "999",
-    "bandwidth": "9999"
-}'
+curl -X POST http://localhost:2052/noobzvpn/add -H "Content-Type: application/json" -d '{ "user": "username", "pass": "password", "exp": "360", "device": "999", "bandwidth": "9999" }'
+```
+
+Jika permintaan berhasil, Anda akan menerima respon dalam format JSON seperti ini:
+```json
+{
+        "service": "noobzvpn"
+        "user": <user>
+        "pass": <pass>
+        "exp_date": <date>
+        "iplim": <iplim>
+        "quota": <quota>
+        "status": "unlock"
+}
 ```
 
 #### Xray Account (vmess, vless, trojan, shadowsocks)
 Untuk menambahkan akun Xray (misalnya vmess):
 ```bash
-curl -X POST http://localhost:2052/vmess/add -H "Content-Type: application/json" -d '{
-    "types": "all",
-    "user": "username",
-    "uuid": "random",
-    "exp": "360",
-    "device": "999",
-    "bandwidth": "9999"
-}'
+curl -X POST http://localhost:2052/vmess/add -H "Content-Type: application/json" -d '{ "types": "all", "user": "username", "uuid": "random", "exp": "360", "device": "999", "bandwidth": "9999" }'
 ```
 
-### 3. Respon
 Jika permintaan berhasil, Anda akan menerima respon dalam format JSON seperti ini:
 ```json
 {
-    "message": "Added ssh account",
-    "data": {
-        "user": "username",
-        "pass": "password",
-        "exp": "360",
-        "device": "999"
-    }
+        "service": <service>
+        "types": "all"
+        "user": <user>
+        "uuid": <uuid>
+        "exp_date": <date>
+        "iplim": <iplim>
+        "quota": <quota>
+        "status": "unlock"
 }
 ```
 
-### 4. Contoh Endpoint Lainnya
+### 3. Contoh Endpoint Lainnya
 Anda juga bisa menggunakan endpoint lain seperti mengedit, menghapus, mengunci, atau membuka kunci akun. Contoh permintaan untuk menghapus akun:
 ```bash
-curl -X POST http://localhost:2052/ssh/remove -H "Content-Type: application/json" -d '{
-    "user": "username"
-}'
+curl -X POST http://localhost:2052/ssh/remove -H "Content-Type: application/json" -d '{ "user": "username" }'
 ```
 
 Jika permintaan berhasil, Anda akan menerima respon seperti ini:
 ```json
 {
-    "message": "Removed ssh account for user: username",
-    "data": {
-        "user": "username"
-    }
+    "message": "Removed ssh account for user: <username>"
 }
 ```
 
