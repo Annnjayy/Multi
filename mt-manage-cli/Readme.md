@@ -15,22 +15,22 @@
 
 | Action | Req_Options |
 |--|--|
-| add | all opts |
-| edit | all opts |
+| add | all options other than --port  |
+| edit | -e , -d , -b |
 | remove | --user |
 | lock | --user |
 | unlock | --user |
 
-| Options | Informasi | For_Command |
-|--|--|--|
-| --port | Port for the API Web server | for serve |
-| --types | Types for the account link ( all / ws / grpc ) | for xray ( vmess, vless, trojan, shadowsocks ) |
-| --user | Username for the all service | for xray ( vmess, vless, trojan, shadowsocks ) |
-| --pass | Password for the account | for ssh & noobzvpn |
-| --uuid | UUID [v4] for the account | for xray ( vmess, vless, trojan, shadowsocks ) |
-| -e | Expiration date | for all service |
-| -d | Device Limit | for all service |
-| -b | Bandwidth Limit | for noobzvpn & xray ( vmess, vless, trojan, shadowsocks ) |
+| Options | Informasi | For_Command | default_value |
+|--|--|--|--|
+| --port | Port for the API Web server | for serve | 2052 |
+| --types | Types for the account link ( all / ws / grpc ) | for xray ( vmess, vless, trojan, shadowsocks ) | all |
+| --user | Username for the all service | for xray ( vmess, vless, trojan, shadowsocks ) | |
+| --pass | Password for the account | for ssh & noobzvpn | |
+| --uuid | UUID [v4] for the account | for xray ( vmess, vless, trojan, shadowsocks ) | random |
+| -e | Expiration date | for all service | 360 |
+| -d | Device Limit | for all service | 999 |
+| -b | Bandwidth Limit | for noobzvpn & xray ( vmess, vless, trojan, shadowsocks ) | 9999 |
 
 #### Menampilkan Bantuan
 Menampilkan bantuan umum untuk CLI:
@@ -80,11 +80,11 @@ unlock [opts] [..] : unlocking existing account.
 1. **SSH**
    - Menambah akun SSH:
      ```bash
-     ./mt-manage-cli ssh add --user <username> --pass <password> --exp <expiration_date> --device <device_id>
+     ./mt-manage-cli ssh add --user <username> --pass <password> -e <expiration_date> -d <device_limit>
      ```
    - Mengedit akun SSH:
      ```bash
-     ./mt-manage-cli ssh edit --user <username> --pass <password> --exp <expiration_date> --device <device_id>
+     ./mt-manage-cli ssh edit --user <username> --pass <password> -e <expiration_date> -d <device_limit>
      ```
    - Menghapus akun SSH:
      ```bash
@@ -102,11 +102,11 @@ unlock [opts] [..] : unlocking existing account.
 2. **Noobzvpn**
    - Menambah akun Noobzvpn:
      ```bash
-     ./mt-manage-cli noobzvpn add --user <username> --pass <password> --exp <expiration_date> --device <device_id> --bandwidth <bandwidth_limit>
+     ./mt-manage-cli noobzvpn add --user <username> --pass <password> -e <expiration_date> -d <device_limit> -b <bandwidth_limit>
      ```
    - Mengedit akun Noobzvpn:
      ```bash
-     ./mt-manage-cli noobzvpn edit --user <username> --pass <password> --exp <expiration_date> --device <device_id> --bandwidth <bandwidth_limit>
+     ./mt-manage-cli noobzvpn edit --user <username> --pass <password> -e <expiration_date> -d <device_limit> -b <bandwidth_limit>
      ```
    - Menghapus akun Noobzvpn:
      ```bash
@@ -124,11 +124,11 @@ unlock [opts] [..] : unlocking existing account.
 3. **Xray (Vmess, Vless, Trojan, Shadowsocks)**
    - Menambah akun Xray:
      ```bash
-     ./mt-manage-cli vmess add --user <username> --uuid <uuid> --exp <expiration_date> --device <device_id> --bandwidth <bandwidth_limit>
+     ./mt-manage-cli vmess add --user <username> --uuid <uuid> -e <expiration_date> -d <device_limit> -b <bandwidth_limit>
      ```
    - Mengedit akun Xray:
      ```bash
-     ./mt-manage-cli vmess edit --user <username> --uuid <uuid> --exp <expiration_date> --device <device_id> --bandwidth <bandwidth_limit>
+     ./mt-manage-cli vmess edit --user <username> --uuid <uuid> -e <expiration_date> -d <device_limit> -b <bandwidth_limit>
      ```
    - Menghapus akun Xray:
      ```bash
@@ -161,6 +161,13 @@ Berikut ini adalah contoh penggunaan dan bagaimana cara memanggil endpoint untuk
 |Trojan|/trojan|✅|
 |Shadowsocks|/shadowsocks|✅|
 
+Contoh APIKEY
+```Config.json
+{
+    "apikey": "my_token"
+}
+```
+
 1. Menjalankan Server
    Pertama, Anda perlu menjalankan server Anda. Pastikan Anda sudah mengompilasi dan menjalankan program Anda dengan perintah:
    ```bash
@@ -172,7 +179,7 @@ Berikut ini adalah contoh penggunaan dan bagaimana cara memanggil endpoint untuk
 
    - Menambahkan akun SSH:
      ```bash
-     curl -X POST http://localhost:2052/ssh/add -H "Content-Type: application/json" -d '{ "user": "username", "pass": "password", "exp": "360", "device": "999" }'
+     curl -X POST http://localhost:2052/ssh/add -H "Content-Type: application/json" -H "Authorization: Bearer <my_token>" -d '{ "user": "username", "pass": "password", "exp": "360", "device": "999" }'
      ```
 
    Jika permintaan berhasil, Anda akan menerima respon dalam format JSON seperti ini:
@@ -189,7 +196,7 @@ Berikut ini adalah contoh penggunaan dan bagaimana cara memanggil endpoint untuk
 
    - Menambahkan akun Noobzvpn:
      ```bash
-     curl -X POST http://localhost:2052/noobzvpn/add -H "Content-Type: application/json" -d '{ "user": "username", "pass": "password", "exp": "360", "device": "999", "bandwidth": "9999" }'
+     curl -X POST http://localhost:2052/noobzvpn/add -H "Content-Type: application/json" -H "Authorization: Bearer <my_token>" -d '{ "user": "username", "pass": "password", "exp": "360", "device": "999", "bandwidth": "9999" }'
      ```
 
    Jika permintaan berhasil, Anda akan menerima respon dalam format JSON seperti ini:
@@ -207,7 +214,7 @@ Berikut ini adalah contoh penggunaan dan bagaimana cara memanggil endpoint untuk
 
    - Menambahkan akun Xray (misalnya vmess):
      ```bash
-     curl -X POST http://localhost:2052/vmess/add -H "Content-Type: application/json" -d '{ "types": "all", "user": "username", "uuid": "random", "exp": "360", "device": "999", "bandwidth": "9999" }'
+     curl -X POST http://localhost:2052/vmess/add -H "Content-Type: application/json" -H "Authorization: Bearer <my_token>" -d '{ "types": "all", "user": "username", "uuid": "random", "exp": "360", "device": "999", "bandwidth": "9999" }'
      ```
 
    Jika permintaan berhasil, Anda akan menerima respon dalam format JSON seperti ini:
@@ -227,13 +234,21 @@ Berikut ini adalah contoh penggunaan dan bagaimana cara memanggil endpoint untuk
 3. Contoh Endpoint Lainnya
    Anda juga bisa menggunakan endpoint lain seperti mengedit, menghapus, mengunci, atau membuka kunci akun. Contoh permintaan untuk menghapus akun:
    ```bash
-   curl -X POST http://localhost:2052/ssh/remove -H "Content-Type: application/json" -d '{ "user": "username" }'
+   curl -X POST http://localhost:2052/ssh/remove -H "Content-Type: application/json" -H "Authorization: Bearer <my_token>" -d '{ "user": "username" }'
    ```
 
    Jika permintaan berhasil, Anda akan menerima respon seperti ini:
    ```json
    {
-        "message": "Removed ssh account for user: <username>"
+        "message": "Successfully removed ssh account for user: <username>"
+        "status": "success"
+   }
+   ```
+   Jika user tidak ada, Anda akan menerima respon seperti ini:
+   ```json
+   {
+        "message": "User manehnya does not exists.",
+        "status": "error"
    }
    ```
 
