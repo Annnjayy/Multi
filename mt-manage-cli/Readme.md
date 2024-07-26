@@ -1,5 +1,3 @@
-Berikut adalah dokumentasi lengkap yang dapat Anda gunakan untuk README di GitHub proyek Anda:
-
 # mt-manage-cli
 
 `mt-manage-cli` adalah antarmuka baris perintah (CLI) yang digunakan untuk mengelola berbagai layanan seperti akun SSH, Noobzvpn, dan Xray. Selain itu, CLI ini juga menyediakan server web API untuk mengelola akun melalui permintaan HTTP.
@@ -167,7 +165,7 @@ Berikut ini adalah contoh penggunaan dan bagaimana cara memanggil endpoint untuk
 | Trojan | /trojan | ✅ |
 | Shadowsocks | /shadowsocks | ✅ |
 
-Contoh `config.json`
+Config file : `/root/.config/config.json`
 ```json
 {
     "apikey": "<api_key>"
