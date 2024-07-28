@@ -159,7 +159,7 @@ Berikut ini adalah contoh penggunaan dan bagaimana cara memanggil endpoint untuk
 | Service | Path | Command |
 |--|--|--|
 | SSH/OpenVPN | /ssh | ✅ |
-| Noobzvpn | /noobzvpn | ✅ |
+| Noobzvpns | /noobzvpn | ✅ |
 | VMess | /vmess | ✅ |
 | VLess | /vless | ✅ |
 | Trojan | /trojan | ✅ |
@@ -172,7 +172,7 @@ Config file : `/root/.config/config.json`
     "token": "<bot_token>"
     "admin": [
       "<id_tele>",
-      "xxx"
+      "<id_tele>"
     ]
 }
 ```
@@ -270,8 +270,8 @@ Berikut adalah rangkuman langkah-langkah yang perlu dilakukan:
      {
          "status": "success",
          "result": {
-             "service": "xray",
-             "types": "vmess",
+             "service": "vmess",
+             "types": "all",
              "user": "username",
              "uuid": "uuid",
              "iplim": 999,
