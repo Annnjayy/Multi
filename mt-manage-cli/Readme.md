@@ -24,7 +24,6 @@
 
 | Options | Informasi | For_Command | default_value |
 |--|--|--|--|
-| `--port` | Port untuk server API Web | Untuk `serve` | 2052 |
 | `--types` | Tipe link untuk akun Xray (`all`/`ws`/`grpc`) | Untuk Xray (`vmess`, `vless`, `trojan`, `shadowsocks`) | all |
 | `--user` | Username untuk semua layanan | Untuk Xray (`vmess`, `vless`, `trojan`, `shadowsocks`) | |
 | `--pass` | Password untuk akun | Untuk `ssh` & `noobzvpn` | |
@@ -69,7 +68,6 @@ lock [opts] [..] : Mengunci akun yang sudah ada.
 unlock [opts] [..] : Membuka kunci akun yang sudah ada.
 
 [opts]:
---port <PORT_API> : Menentukan port untuk server API Web, default: 2052.
 --types <TYPE_XRAY> : Menentukan tipe link akun Xray, default: all.
 --user <USERNAME> : Menentukan username akun.
 --pass <PASSWORD> : Menentukan password akun.
@@ -169,6 +167,7 @@ Config file : `/root/.config/config.json`
 ```json
 {
     "apikey": "<api_key>"
+    "port": 2025,
     "token": "<bot_token>"
     "admin": [
       "<id_tele>",
