@@ -183,7 +183,7 @@ Contoh `config.json`
 
 ---
 
-Penggunaan curl dengan Autentikasi Bearer
+### Penggunaan curl dengan Autentikasi Bearer
 
 1. Situasi 1: Autentikasi Bearer Dimatikan (Jika apikey == "false")
 
