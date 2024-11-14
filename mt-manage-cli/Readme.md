@@ -25,6 +25,7 @@
 | `remove` | `--user` |
 | `lock` | `--user` |
 | `unlock` | `--user` |
+| `detail` | `--user` |
 
 | Options | Informasi | For_Command | default_value |
 |--|--|--|--|
@@ -73,6 +74,7 @@ edit [opts] [..] : Mengedit akun yang sudah ada.
 remove [opts] [..] : Menghapus akun yang sudah ada.
 lock [opts] [..] : Mengunci akun yang sudah ada.
 unlock [opts] [..] : Membuka kunci akun yang sudah ada.
+detail [opts] [..] : Mendapatkan detail akun yang sudah ada.
 
 [opts]:
 --types <TYPE_XRAY> : Menentukan tipe link akun Xray, default: all.
@@ -93,65 +95,96 @@ unlock [opts] [..] : Membuka kunci akun yang sudah ada.
   ```bash
   ./mt-manage-cli ssh add --user <username> --pass <password> -e <expiration_date> -d <device_limit>
   ```
-- Mengedit akun SSH:
+- Mengedit akun SSH
+  semua opsi :
   ```bash
   ./mt-manage-cli ssh edit --user <username> --pass <password> -e <expiration_date> -d <device_limit>
   ```
-- Menghapus akun SSH:
+  
+  hanya opsi tertentu :
+  ```bash
+  ./mt-manage-cli ssh edit --user <username> -e <expiration_date> 
+  ```
+- Menghapus akun SSH
   ```bash
   ./mt-manage-cli ssh remove --user <username>
   ```
-- Mengunci akun SSH:
+- Mengunci akun SSH
   ```bash
   ./mt-manage-cli ssh lock --user <username>
   ```
-- Membuka kunci akun SSH:
+- Membuka kunci akun SSH
   ```bash
   ./mt-manage-cli ssh unlock --user <username>
   ```
+- Mendapatkan detail akun SSH
+  ```bash
+  ./mt-manage-cli ssh detail --user <username>
+  ```
 
-#### Noobzvpn
-- Menambah akun Noobzvpn:
+#### Noobzvpns
+- Menambah akun Noobzvpn
   ```bash
   ./mt-manage-cli noobzvpn add --user <username> --pass <password> -e <expiration_date> -d <device_limit> -b <bandwidth_limit>
   ```
-- Mengedit akun Noobzvpn:
+- Mengedit akun Noobzvpn
+  semua opsi :
   ```bash
   ./mt-manage-cli noobzvpn edit --user <username> --pass <password> -e <expiration_date> -d <device_limit> -b <bandwidth_limit>
   ```
-- Menghapus akun Noobzvpn:
+  
+  hanya opsi tertentu :
+  ```bash
+  ./mt-manage-cli noobzvpn edit --user <username> -e <expiration_date> 
+  ```
+- Menghapus akun Noobzvpn
   ```bash
   ./mt-manage-cli noobzvpn remove --user <username>
   ```
-- Mengunci akun Noobzvpn:
+- Mengunci akun Noobzvpn
   ```bash
   ./mt-manage-cli noobzvpn lock --user <username>
   ```
-- Membuka kunci akun Noobzvpn:
+- Membuka kunci akun Noobzvpn
   ```bash
   ./mt-manage-cli noobzvpn unlock --user <username>
   ```
+- Mendapatkan detail akun Noobzvpn
+  ```bash
+  ./mt-manage-cli noobzvpn detail --user <username>
+  ```
 
-#### Xray (Vmess, Vless, Trojan, Shadowsocks)
-- Menambah akun Xray:
+#### Xray ( vmess, vless, trojan, shadowsocks )
+- Menambah akun Xray
   ```bash
   ./mt-manage-cli vmess add --user <username> --uuid <uuid> -e <expiration_date> -d <device_limit> -b <bandwidth_limit>
   ```
-- Mengedit akun Xray:
+  
+- Mengedit akun Xray
+  semua opsi :
   ```bash
   ./mt-manage-cli vmess edit --user <username> --uuid <uuid> -e <expiration_date> -d <device_limit> -b <bandwidth_limit>
   ```
-- Menghapus akun Xray:
+  
+  hanya opsi tertentu :
+  ```bash
+  ./mt-manage-cli vmess edit --user <username> -e <expiration_date> 
+  ```
+- Menghapus akun Xray
   ```bash
   ./mt-manage-cli vmess remove --user <username>
   ```
-- Mengunci akun Xray:
+- Mengunci akun Xray
   ```bash
   ./mt-manage-cli vmess lock --user <username>
   ```
-- Membuka kunci akun Xray:
+- Membuka kunci akun Xray
   ```bash
   ./mt-manage-cli vmess unlock --user <username>
+  ```
+- Mendapatkan detail akun Xray
+  ```bash
+  ./mt-manage-cli vmess detail --user <username>
   ```
 
 ---
@@ -159,14 +192,17 @@ unlock [opts] [..] : Membuka kunci akun yang sudah ada.
 ### Penggunaan API
 Berikut ini adalah contoh penggunaan dan bagaimana cara memanggil endpoint untuk menambahkan akun melalui API `mt-manage-cli`:
 
-| Service | Path | Command |
-|--|--|--|
-| SSH/OpenVPN | /ssh | ✅ |
-| Noobzvpn | /noobzvpn | ✅ |
-| VMess | /vmess | ✅ |
-| VLess | /vless | ✅ |
-| Trojan | /trojan | ✅ |
-| Shadowsocks | /shadowsocks | ✅ |
+| Service       | Endpoint                       | HTTP Method | Description                    |
+|---------------|--------------------------------|-------------|--------------------------------|
+| ssh, noobzvpn, vmess, vless, trojan, shadowsocks | `/add`                           | POST        | Menambahkan akun baru untuk layanan tertentu |
+| ssh, noobzvpn, vmess, vless, trojan, shadowsocks | `/edit`                          | PATCH       | Mengedit akun yang ada untuk layanan tertentu |
+| ssh, noobzvpn, vmess, vless, trojan, shadowsocks | `/remove`                        | DELETE      | Menghapus akun dari layanan tertentu |
+| ssh, noobzvpn, vmess, vless, trojan, shadowsocks | `/lock`                          | POST        | Mengunci akun untuk layanan tertentu |
+| ssh, noobzvpn, vmess, vless, trojan, shadowsocks | `/unlock`                        | POST        | Membuka kunci akun untuk layanan tertentu |
+| ssh, noobzvpn, vmess, vless, trojan, shadowsocks | `/detail`                        | GET         | Mendapatkan detail lengkap dari akun untuk layanan tertentu |
+| ssh, noobzvpn, vmess, vless, trojan, shadowsocks | `/accounts`                      | GET         | Mendapatkan jumlah total dari akun-akun untuk layanan tertentu |
+
+> **Note:** Gantilah `{service}` di URL dengan salah satu layanan berikut: `ssh`, `noobzvpn`, `vmess`, `vless`, `trojan`, atau `shadowsocks`.
 
 Contoh `config.json`
 ```json
@@ -181,31 +217,6 @@ Contoh `config.json`
 }
 ```
 
----
-
-### Penggunaan curl dengan Autentikasi Bearer
-
-1. Situasi 1: Autentikasi Bearer Dimatikan (Jika apikey == "false")
-
-Jika apikey diatur ke "false", autentikasi Bearer tidak diperlukan. Anda dapat mengirimkan permintaan tanpa header Authorization.
-
-Contoh curl dengan Data JSON (POST):
-```bash
-curl -X POST http://localhost:2052/<service>/<action> \
-     -H "Content-Type: application/json" \
-```
----
-
-2. Situasi 2: Autentikasi Bearer Diperlukan (Jika apikey Memiliki Nilai Valid)
-
-Jika apikey memiliki nilai selain "false", autentikasi Bearer diperlukan. Anda harus menyertakan header Authorization dengan token yang valid.
-
-Contoh curl dengan Data JSON (POST):
-```bash
-curl -X POST http://localhost:2052/<service>/<action> \
-     -H "Content-Type: application/json" \
-     -H "Authorization: Bearer <api_key>" \
-```
 ---
 
 ## Petunjuk Penggunaan API
@@ -325,7 +336,6 @@ Berikut adalah rangkuman langkah-langkah yang perlu dilakukan:
              "path": {
                  "ws": "path_ws",
                  "grpc": "path_grpc",
-                 "dynamic": "path_dynamic"
              }
          },
          "message": "Successfully added xray account for user: username"
@@ -333,17 +343,17 @@ Berikut adalah rangkuman langkah-langkah yang perlu dilakukan:
      ```
 
 ### Contoh Endpoint Lainnya
-Anda juga bisa menggunakan endpoint lain seperti mengedit, menghapus, mengunci, atau membuka kunci akun. 
+Anda juga bisa menggunakan endpoint lain seperti mengedit, menghapus, mengunci / membuka kunci akun, mendapatkan detail akun, dan. total akun.
 
 Contoh permintaan untuk menghapus akun:
 ```bash
-curl -X POST http://localhost:2052/ssh/remove -H "Content-Type: application/json" -H "Authorization: Bearer <api_key>" -d '{ "user": "username" }'
+curl -X <method> http://localhost:2052/<service>/<action> -H "Content-Type: application/json" -H "Authorization: Bearer <api_key>" -d '{ "user": "username" }'
 ```
 
 Respon jika permintaan berhasil:
 ```json
 {
-    "message": "Successfully removed ssh account for user: username",
+    "message": "Successfully removed <service> account for user: username",
     "status": "success"
 }
 ```
